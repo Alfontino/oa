@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detective digital: el mensaje sospechoso</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Marcador fijo de puntaje -->
+  <div class="marcador" title="Tu puntaje">
+    <span class="marcador-icono">🔍</span>
+    <span class="marcador-texto">Puntaje: <span id="puntaje">0</span> / 3</span>
+  </div>
+
+  <header>
+    <p>🔍 CASO 001</p>
+    <h1>Detective digital: el mensaje sospechoso</h1>
+    <p>Llegó un mensaje raro a la Agencia de Detectives Digitales.</p>
+    <p>Promete un premio y pide una contraseña. ¿Será un engaño?</p>
+    <p>Necesitamos un detective. <strong>¿Aceptás el caso?</strong></p>
+  </header>
+
+  <main>
+
+    <h2>Expediente: qué es el phishing</h2>
+    <p>El phishing es un engaño por internet.</p>
+    <p>Alguien te escribe y se hace pasar por una empresa o por una persona conocida.</p>
+    <p>Te pide datos: tu usuario, tu contraseña o el número de una tarjeta.</p>
+    <p>Quiere entrar a tus cuentas.</p>
+    <p>El mensaje puede llegar por correo, por mensaje de texto o por una red social.</p>
+
+    <img src="https://noticias.unad.edu.co/images/GIDT/seguridadinformacion/Seguridad_Correo_Electronico/correo_falso_premio.jpg"
+         alt="Correo falso que avisa de un premio y pide datos sensibles."
+         width="480">
+    <p><em>Un correo falso: promete un premio y pide la contraseña.</em></p>
+
+    <h2>Tres señales para reconocerlo</h2>
+    <ol>
+      <li><strong>Te apuran.</strong> El mensaje dice que tenés que actuar ya.
+        Por ejemplo: «tu cuenta se cierra hoy».</li>
+      <li><strong>Te ofrecen algo muy bueno.</strong> Por ejemplo: «ganaste un celular».</li>
+      <li><strong>La dirección es rara.</strong> El nombre parece conocido, pero la
+        dirección tiene letras o números de más.</li>
+    </ol>
+
+    <img src="https://i0.wp.com/masterbase.com/wp-content/uploads/2025/05/3-2.png?fit=800%2C800&ssl=1"
+         alt="Elementos objetivos del ataque."
+         width="480">
+
+    <h2>Qué hacer con un mensaje sospechoso</h2>
+    <ul>
+      <li>No toques el enlace.</li>
+      <li>No respondas el mensaje.</li>
+      <li>Mirá con atención la dirección de quien escribe.</li>
+      <li>Contale lo que pasó a una persona adulta de confianza.</li>
+      <li>Borrá el mensaje o marcalo como correo no deseado.</li>
+    </ul>
+
+    <h2>Mirá el video</h2>
+
+    <iframe width="480" height="270"
+            src="https://www.youtube.com/embed/8ktaGnFkOoc?si=fb3hdDnxHh_3xJDM"
+            title="Video explicativo sobre el phishing"
+            allowfullscreen></iframe>
+    <p><em>Video corto que explica el engaño con un ejemplo.</em></p>
+
+    <hr>
+
+    <!-- ===== RETOS ===== -->
+    <h2>Ponete la lupa: tres retos</h2>
+    <p>Cada acierto suma 1 punto. Cada error resta medio punto. Si resolvés los 3 retos,
+      ganás la insignia <strong>Detective digital, nivel 1</strong>.</p>
+    <p>Si te trabás, abrí la pista. Antes de comprobar, compará lo que pensaste
+      con un compañero. Tu puntaje te acompaña arriba a la derecha.</p>
+
+    <section>
+      <h3>Reto 1. Elegí la opción correcta</h3>
+      <form id="form-reto1" onsubmit="event.preventDefault(); comprobarReto1();">
+        <p>Te llega este mensaje: «Ganaste un celular. Tenés 2 horas para reclamarlo.
+          Entrá acá con tu usuario y tu contraseña». ¿Qué hacés?</p>
+
+        <p>
+          <input type="radio" id="r1a" name="reto1" value="a">
+          <label for="r1a">a) Entro rápido, antes de que se termine el tiempo.</label>
+        </p>
+        <p>
+          <input type="radio" id="r1b" name="reto1" value="b">
+          <label for="r1b">b) No toco el enlace y le aviso a una persona adulta de confianza.</label>
+        </p>
+        <p>
+          <input type="radio" id="r1c" name="reto1" value="c">
+          <label for="r1c">c) Respondo el mensaje y pido más información.</label>
+        </p>
+
+        <details>
+          <summary>Ver una pista</summary>
+          <p>Mirá cuánto tiempo te dan y qué te ofrecen. Son dos señales del engaño.</p>
+        </details>
+
+        <button type="button" onclick="comprobarReto1()">Comprobar</button>
+      </form>
+      <div id="feedback1" class="feedback" aria-live="polite"></div>
+    </section>
+
+    <section>
+      <h3>Reto 2. Completá la frase</h3>
+      <form id="form-reto2" onsubmit="event.preventDefault(); comprobarReto2();">
+        <p>«Un mensaje que se hace pasar por otra persona y te pide tu contraseña
+          es un caso de ______________.»</p>
+
+        <p>
+          <label for="respuesta2">Escribí la palabra que falta:</label>
+          <input type="text" id="respuesta2" name="reto2" autocomplete="off">
+        </p>
+
+        <details>
+          <summary>Ver una pista</summary>
+          <p>La palabra empieza con la letra p y tiene 8 letras.</p>
+        </details>
+
+        <button type="button" onclick="comprobarReto2()">Comprobar</button>
+      </form>
+      <div id="feedback2" class="feedback" aria-live="polite"></div>
+    </section>
+
+    <section>
+      <h3>Reto 3. Verdadero o falso</h3>
+      <form id="form-reto3" onsubmit="event.preventDefault(); comprobarReto3();">
+        <p>«El phishing solo llega por correo electrónico.»</p>
+
+        <p>
+          <input type="radio" id="r3v" name="reto3" value="verdadero">
+          <label for="r3v">Verdadero</label>
+        </p>
+        <p>
+          <input type="radio" id="r3f" name="reto3" value="falso">
+          <label for="r3f">Falso</label>
+        </p>
+
+        <details>
+          <summary>Ver una pista</summary>
+          <p>Pensá en los mensajes que recibís en el celular. ¿Llegan solo por correo?</p>
+        </details>
+
+        <button type="button" onclick="comprobarReto3()">Comprobar</button>
+      </form>
+      <div id="feedback3" class="feedback" aria-live="polite"></div>
+    </section>
+
+    <!-- ===== CIERRE ===== -->
+    <article id="cierre" hidden>
+      <h2>Misión cumplida</h2>
+      <p>🏅 <strong>Detective digital, nivel 1</strong></p>
+      <p>Resolviste los 3 retos: la insignia es tuya. Mostrale tu insignia a la clase.</p>
+      <p>Ahora ayudá a un compañero: explicale una de las tres señales con tus palabras.
+        Los puntos de todos suman a la meta de la agencia.</p>
+    </article>
+
+  </main>
+
+  <footer>
+    <p>Objeto de Aprendizaje creado por Alfonso Mesón y Benjamín Alzugaray ·
+      Curso de Diseño Web.</p>
+  </footer>
+
+  <script>
+    // Detective digital: el mensaje sospechoso — Sprint 3
+
+    var PUNTOS_ACIERTO = 1;   // se suman al acertar (una sola vez por reto)
+    var PUNTOS_ERROR = 0.5;   // se restan en cada error (poné 0 para "sin castigo")
+
+    var puntaje = 0;
+    var resueltos = { 1: false, 2: false, 3: false };
+
+    var mensajes = {
+      1: {
+        b: "Muy bien. Reconociste dos señales juntas: el premio y el apuro. Avisar a una persona adulta es la mejor decisión.",
+        a: "Cuidado. El apuro es una señal de engaño. Un mensaje verdadero no te da dos horas para entregar tu contraseña.",
+        c: "Todavía no. Si respondés, la otra persona confirma que tu dirección existe y te va a escribir de nuevo. Es mejor no contestar."
+      },
+      2: {
+        ok: "Exacto. Esa palabra nombra el engaño: alguien pesca datos con un mensaje falso.",
+        mal: "Todavía no. Volvé al título «Expediente: qué es el phishing». La palabra que buscás está en la primera frase."
+      },
+      3: {
+        ok: "Muy bien. El engaño también llega por mensaje de texto, por redes sociales y por aplicaciones de mensajes.",
+        mal: "No. El correo es solo un camino. Un mensaje de texto puede traer el mismo engaño."
+      }
+    };
+
+    function mostrarPuntaje() {
+      document.getElementById("puntaje").textContent = String(puntaje).replace(".", ",");
+    }
+
+    function mostrarFeedback(reto, texto, acierto) {
+      var caja = document.getElementById("feedback" + reto);
+      caja.textContent = (acierto ? "✅ " : "❌ ") + texto;
+      caja.className = "feedback " + (acierto ? "correcto" : "incorrecto");
+    }
+
+    function bloquearReto(reto) {
+      var controles = document.getElementById("form-reto" + reto).querySelectorAll("input, button");
+      for (var i = 0; i < controles.length; i++) {
+        controles[i].disabled = true;
+      }
+    }
+
+    function registrarResultado(reto, acierto) {
+      if (resueltos[reto]) { return; }
+
+      if (acierto) {
+        resueltos[reto] = true;
+        puntaje = puntaje + PUNTOS_ACIERTO;
+        bloquearReto(reto);
+      } else {
+        puntaje = Math.max(0, puntaje - PUNTOS_ERROR);
+      }
+
+      mostrarPuntaje();
+
+      if (resueltos[1] && resueltos[2] && resueltos[3]) {
+        var cierre = document.getElementById("cierre");
+        cierre.hidden = false;
+        cierre.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    function comprobarReto1() {
+      var elegida = document.querySelector('input[name="reto1"]:checked');
+      if (elegida === null) {
+        mostrarFeedback(1, "Elegí una opción antes de comprobar.", false);
+        return;
+      }
+      var acierto = (elegida.value === "b");
+      mostrarFeedback(1, mensajes[1][elegida.value], acierto);
+      registrarResultado(1, acierto);
+    }
+
+    function comprobarReto2() {
+      var texto = document.getElementById("respuesta2").value.trim().toLowerCase();
+      if (texto === "") {
+        mostrarFeedback(2, "Escribí la palabra antes de comprobar.", false);
+        return;
+      }
+      var acierto = (texto === "phishing");
+      mostrarFeedback(2, acierto ? mensajes[2].ok : mensajes[2].mal, acierto);
+      registrarResultado(2, acierto);
+    }
+
+    function comprobarReto3() {
+      var elegida = document.querySelector('input[name="reto3"]:checked');
+      if (elegida === null) {
+        mostrarFeedback(3, "Marcá verdadero o falso antes de comprobar.", false);
+        return;
+      }
+      var acierto = (elegida.value === "falso");
+      mostrarFeedback(3, acierto ? mensajes[3].ok : mensajes[3].mal, acierto);
+      registrarResultado(3, acierto);
+    }
+  </script>
+</body>
+</html>
